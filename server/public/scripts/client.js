@@ -1,7 +1,7 @@
-$(document).ready(function(){
-console.log('jQuery is working!' );
+$(document).ready(function () {
+    console.log('jQuery is working!');
 
-$(".js-btn-add").on("click", addValues);
+    $(".js-btn-add").on("click", addValues);
 });
 
 function addValues(event) {
@@ -9,6 +9,19 @@ function addValues(event) {
 
     const numOne = parseInt($("#js-input-one").val());
     const numTwo = parseInt($("#js-input-two").val());
+    const answer = numOne + numTwo;
+    $("#js-input-one").val("");
+    $("#js-input-two").val("");
 
-    console.log(numOne, numTwo);
+    render(answer);
+
+   
+}
+
+function render(answer) {
+    $('.container').empty();
+    $('.container').append(`
+    <h1>${answer}</h1>
+    `);
+    
 }
